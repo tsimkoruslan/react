@@ -1,19 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import userServices from "../../services/user.services";
 
 const PostByComment = () => {
+    const {id} = useParams()
 
-    const {state} =  useLocation()
-    const postId = state.id
+    // const {state} =  useLocation()
+    // const postId = state.id
+
     const [post, setPost] =  useState([])
 
     useEffect(()=>{
         userServices
-            .getPostById(postId)
+            .getPostById(id)
             .then(value => value.data)
             .then(value => setPost(value))
-    },[postId])
+    },[id])
 
     return (
         <div>
