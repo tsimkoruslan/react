@@ -1,10 +1,13 @@
 
-function App() {
-  return (
-    <div>
+import React from "react";
+import HomePage from "./Components/HomePage/HomePage";
 
-    </div>
-  );
+function App() {
+    return (
+        <div>
+            <HomePage/>
+        </div>
+    );
 }
 
 export default App;
