@@ -5,16 +5,22 @@ import {usersService} from "../../services/usersService";
 
 const Users = () => {
 
-    const {users, setUsers} = useState([])
+    const [users, setUsers] = useState([])
 
     useEffect(() => {
         usersService.getAll().then(value => value.data).then(value => setUsers(value))
-    })
+    },[])
 
     return (
         <div>
-            <UserForm/>
-            { users.map(user => <User key={user.id} user={user} />) }
+            <div>
+                <UserForm/>
+            </div>
+            <div>
+                {
+                    users.map(item => <User item={item} key={item.id}/>)
+                }
+            </div>
         </div>
     );
 };

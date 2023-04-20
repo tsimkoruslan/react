@@ -6,16 +6,17 @@ const UserForm = () => {
 
     const {register, handleSubmit, reset, formState:{errors, isValid}, setValue }= useForm();
 
-    const save =  (data) => {
-        console.log(data)
+    const save = async (user) => {
+        await usersService.postUser(user)
+        reset()
     }
 
     return (
         <form onSubmit={handleSubmit(save)} >
-            <input type='text' placeholder={'name'} {...register('name')} />
+            <input type='text' placeholder={'name'} {...register('name')}/>
             <input type='text' placeholder={'username'} {...register('username')} />
             <input type='text' placeholder={'email'} {...register('email')} />
-            <button>Save</button>
+            <button disabled={!isValid}>Save</button>
         </form>
     );
 };
