@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link, Navigate, Route, Routes} from "react-router-dom";
+import {Link, Navigate, Route, Routes} from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 import UsersPage from "./pages/UsersPage";
 import UserDetailsPage from "./pages/UserDetailsPage";
-import FormPage from "./pages/FormPage";
+import CarPage from "./pages/CarPage";
 
 const App = () => {
     return (
         <div>
-            <Link to={'/form'}><button>go to form</button></Link>
+            <Link to={'/form'}>
+                <button>go to form</button>
+            </Link>
 
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
@@ -18,7 +20,7 @@ const App = () => {
                         <Route path={':id'} element={<UserDetailsPage/>}/>
                     </Route>
                 </Route>
-                <Route path={'/form'} element={<FormPage/>}/>
+                <Route path={'/form'} element={<CarPage/>}/>
             </Routes>
 
         </div>
