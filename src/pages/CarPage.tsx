@@ -13,7 +13,7 @@ interface IProps {
 const CarPage: FC<IProps> = () => {
 
     const [cars, setCars] = useState<ICar[]>([]);
-    const[onChange, setOnChange]=useState<boolean>(false)
+    const [onChange, setOnChange] = useState<boolean>(false)
 
 
     useEffect(() => {
@@ -25,9 +25,9 @@ const CarPage: FC<IProps> = () => {
 
     return (
         <div>
-            <CarForm setOnChange={setOnChange} />
+            <CarForm setOnChange={setOnChange}/>
             <hr/>
-             <Cars cars={cars}/>
+            <Cars cars={cars}/>
         </div>
     );
 };

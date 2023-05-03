@@ -12,7 +12,7 @@ interface IProps{
 
 const CarForm: FC<IProps> = ({setOnChange}) => {
 
-    const {register, reset, handleSubmit, formState: {errors, isValid}, setValue} = useForm<ICar>({
+    const {register, reset, handleSubmit, formState: {errors, isValid}} = useForm<ICar>({
         mode: 'all',
         resolver: joiResolver(carValidators)
     })
