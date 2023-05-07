@@ -3,7 +3,7 @@ const baseURL = "https://owu.linkpc.net/carsAPI/v1";
 const cars = '/cars'
 
 const urls = {
-    cars,
+    cars:'/cars',
     byId: (id: number): string => `${cars}/${id}`
 }
 
