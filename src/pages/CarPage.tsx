@@ -5,8 +5,8 @@ import CarForm from "../components/CarForm";
 const CarPage: FC = () => {
     return (
         <div>
-            <Cars/>
             <CarForm/>
+            <Cars/>
         </div>
     );
 };

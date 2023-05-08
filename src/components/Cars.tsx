@@ -4,17 +4,16 @@ import Car from "./Car";
 import {carActions} from "../redux";
 
 const Cars: FC = () => {
-    const {cars} = useAppSelector(state => state.carReducer)
+    const {cars, trigger} = useAppSelector(state => state.car)
     const dispatch = useAppDispatch();
 
     useEffect(()=>{
         dispatch(carActions.getAll())
-    },[dispatch])
+    },[dispatch, trigger])
     return (
         <div>
             {
                 cars.map(car => <Car key={car.id} car={car}/>)
-
             }
         </div>
     );

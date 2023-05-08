@@ -2,7 +2,7 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {carReducer} from "./slice";
 
 const rootReducer = combineReducers({
-    carReducer
+    car:carReducer
 });
 
 const setupStore = () => configureStore({

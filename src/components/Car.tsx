@@ -9,10 +9,11 @@ const Car: FC<IProps> = ({car}) => {
     const {id, year, price, brand} = car
     return (
         <div>
-            <div>{id}</div>
-            <div>{year}</div>
-            <div>{price}</div>
-            <div>{brand}</div>
+            <div>Id - {id}</div>
+            <div>Рік - {year}</div>
+            <div>Ціна - {price}</div>
+            <div>Марка - {brand}</div>
+            <hr/>
 
         </div>
     );
